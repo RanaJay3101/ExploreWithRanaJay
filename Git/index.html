@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git and GitHub Command Guide</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Git and GitHub Command Guide</h1>
+
+        <h2>Git Configuration Commands</h2>
+        <p><code>git config --global user.name "name"</code></p>
+        <p>Sets the username for all repositories on your system.</p>
+
+        <p><code>git config --global user.email "email"</code></p>
+        <p>Sets the email address for all repositories.</p>
+
+        <p><code>git config --global core.editor "code --wait"</code></p>
+        <p>Configures Visual Studio Code as the default editor.</p>
+
+        <p><code>git config --global core.autocrlf "input"</code></p>
+        <p>Converts line endings for compatibility between Unix and Windows systems.</p>
+
+        <p><code>git config --global -e</code></p>
+        <p>Opens the global configuration file in your editor.</p>
+
+        <p><code>git config --list</code></p>
+        <p>Displays all the configuration settings.</p>
+
+        <h2>Initializing and Cloning Repositories</h2>
+        <p><code>git init</code></p>
+        <p>Creates a new Git repository in the current directory.</p>
+
+        <p><code>git clone &lt;repo-url&gt;</code></p>
+        <p>Copies an existing repository to your local machine.</p>
+        <p><strong>Options:</strong></p>
+        <ul>
+            <li><code>--depth 1</code>: Clone with limited history (only the latest commit).</li>
+            <li><code>--branch &lt;branch-name&gt;</code>: Clone a specific branch.</li>
+        </ul>
+
+        <h2>Working with the Staging Area</h2>
+        <p><code>git status</code></p>
+        <p>Shows the status of the working directory and staging area.</p>
+
+        <p><code>git status -s</code></p>
+        <p>Provides a simplified view of the status.</p>
+
+        <p><code>git add &lt;file-name&gt;</code></p>
+        <p>Moves changes to the staging area for the specified file.</p>
+
+        <p><code>git add .</code></p>
+        <p>Stages all changed files in the working directory.</p>
+
+        <p><code>git reset &lt;file-name&gt;</code></p>
+        <p>Removes a file from the staging area but keeps the changes in the working directory.</p>
+
+        <h2>Committing Changes</h2>
+        <p><code>git commit -m "Commit message"</code></p>
+        <p>Saves the staged changes with a descriptive message.</p>
+
+        <p><code>git commit --amend -m "New commit message"</code></p>
+        <p>Modifies the previous commit with a new message or additional changes.</p>
+
+        <p><code>git commit -a -m "Commit message"</code></p>
+        <p>Stages and commits all tracked files in one step.</p>
+
+        <h2>Viewing Commit History</h2>
+        <p><code>git log</code></p>
+        <p>Displays a detailed history of commits.</p>
+
+        <p><code>git log --oneline</code></p>
+        <p>Shows each commit as a single line.</p>
+
+        <p><code>git log --oneline --graph</code></p>
+        <p>Displays the commit history as a graph.</p>
+
+        <p><code>git log --author="Author Name"</code></p>
+        <p>Filters the commit history to show only commits by a specific author.</p>
+
+        <p><code>git log -p</code></p>
+        <p>Shows the differences introduced in each commit.</p>
+
+        <h2>Working with Branches</h2>
+        <p><code>git branch</code></p>
+        <p>Lists all branches in the repository.</p>
+
+        <p><code>git branch &lt;new-branch-name&gt;</code></p>
+        <p>Creates a new branch without switching to it.</p>
+
+        <p><code>git switch &lt;branch-name&gt;</code></p>
+        <p>Switches to the specified branch.</p>
+
+        <p><code>git switch -c &lt;new-branch-name&gt;</code></p>
+        <p>Creates a new branch and switches to it.</p>
+
+        <p><code>git branch -m &lt;new-branch-name&gt;</code></p>
+        <p>Renames the current branch.</p>
+
+        <p><code>git branch -d &lt;branch-name&gt;</code></p>
+        <p>Deletes a branch that has been merged.</p>
+
+        <p><code>git branch -D &lt;branch-name&gt;</code></p>
+        <p>Deletes a branch regardless of its merge status.</p>
+
+        <h2>Merging Branches</h2>
+        <p><code>git merge &lt;branch-name&gt;</code></p>
+        <p>Combines the specified branch into the current branch.</p>
+
+        <p><code>git merge --ff-only &lt;branch-name&gt;</code></p>
+        <p>Moves the current branch pointer forward without creating a new commit.</p>
+
+        <p><code>git merge --squash &lt;branch-name&gt;</code></p>
+        <p>Combines all changes from the branch into a single commit.</p>
+
+        <p><code>git merge --abort</code></p>
+        <p>Stops the merge process and reverts to the previous state.</p>
+
+        <h2>Handling Merge Conflicts</h2>
+        <p><code>git status</code></p>
+        <p>Lists all files with conflicts.</p>
+
+        <p>Options to Resolve Conflicts:</p>
+        <ul>
+            <li><strong>Accept Current Change:</strong> Keeps the changes from the current branch.</li>
+            <li><strong>Accept Incoming Change:</strong> Accepts the changes from the branch being merged.</li>
+            <li><strong>Accept Both Changes:</strong> Combines changes from both branches.</li>
+        </ul>
+
+        <p><code>git add &lt;resolved-file&gt;</code></p>
+        <p>Stages the resolved file.</p>
+
+        <p><code>git commit -m "Resolved merge conflict"</code></p>
+        <p>Finalizes the merge with a commit.</p>
+
+        <h2>Undoing Changes</h2>
+        <p><code>git reset &lt;file-name&gt;</code></p>
+        <p>Removes a file from the staging area.</p>
+
+        <p><code>git checkout -- &lt;file-name&gt;</code></p>
+        <p>Reverts a file back to its last committed state.</p>
+
+        <p><code>git reset --hard &lt;commit-hash&gt;</code></p>
+        <p>Resets the working directory and staging area to match a specific commit, discarding all changes.</p>
+
+        <p><code>git reset --soft &lt;commit-hash&gt;</code></p>
+        <p>Moves the HEAD to a previous commit but keeps changes in the staging area.</p>
+
+        <p><code>git revert &lt;commit-hash&gt;</code></p>
+        <p>Creates a new commit that undoes the changes from a specific commit.</p>
+
+        <h2>Stashing Changes</h2>
+        <p><code>git stash</code></p>
+        <p>Saves changes to a temporary area, allowing you to switch branches without committing.</p>
+
+        <p><code>git stash apply</code></p>
+        <p>Restores the stashed changes.</p>
+
+        <p><code>git stash drop</code></p>
+        <p>Deletes the most recent stash.</p>
+
+        <p><code>git stash clear</code></p>
+        <p>Removes all stashed changes.</p>
+
+        <h2>Collaborating with GitHub</h2>
+        <p><code>git remote add origin &lt;repo-url&gt;</code></p>
+        <p>Links your local repository to a remote repository.</p>
+
+        <p><code>git remote -v</code></p>
+        <p>Displays the remote repositories linked to your local repository.</p>
+
+        <p><code>git push -u origin &lt;branch-name&gt;</code></p>
+        <p>Uploads your branch to the remote repository.</p>
+
+        <p><code>git pull</code></p>
+        <p>Fetches and merges changes from the remote repository into the current branch.</p>
+
+        <p><code>git fetch</code></p>
+        <p>Downloads changes from the remote repository without merging.</p>
+
+        <p><code>git push origin --delete &lt;branch-name&gt;</code></p>
+        <p>Removes a branch from the remote repository.</p>
+
+        <h3>Common GitHub Workflow</h3>
+        <ol>
+            <li>Main person creates the repository and uploads initial files to GitHub.</li>
+            <li>Collaborators clone the repository to their local machine.</li>
+            <li>Collaborators create their own branches and make changes.</li>
+            <li>Collaborators push their branches to GitHub and inform the team.</li>
+            <li>The project maintainer fetches the new branches and merges them into the main branch.</li>
+        </ol>
+    </div>
+
+    <footer>
+        Developed by Rana Jay
+    </footer>
+    
+</body>
+</html>
